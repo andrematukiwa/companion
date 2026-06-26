@@ -1,0 +1,24 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# Backend — Maven / Spring Boot
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/mvnw
+backend/mvnw.cmd
+
+# Backend — env/secrets
+backend/src/main/resources/application-local.yml
+
+# Frontend — Node
+kindle-page/node_modules/
+kindle-page/dist/
+
+# OS
+.DS_Store
+Thumbs.db
