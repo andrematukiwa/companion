@@ -39,8 +39,10 @@ export function useSSE(token: string | null) {
       })
 
       es.onerror = () => {
-        // EventSource reconecta automaticamente — apenas atualiza o status visual
         setStatus('connecting')
+        es.close()
+        esRef.current = null
+        setTimeout(connect, 5000)
       }
     }
 
