@@ -13,8 +13,11 @@ public class KindleRedirectController {
     @Value("${companion.kindle.token}")
     private String kindleToken;
 
+    @Value("${companion.cors.allowed-origins}")
+    private String frontendUrl;
+
     @GetMapping("/k")
     public void redirect(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/api/sse/kindle?token=" + kindleToken);
+        response.sendRedirect(frontendUrl + "?token=" + kindleToken);
     }
 }
