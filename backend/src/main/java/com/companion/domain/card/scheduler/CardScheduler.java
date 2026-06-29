@@ -102,8 +102,8 @@ public class CardScheduler {
                 .findFirst()
                 .orElseGet(() -> candidates.stream()
                         .sorted(Comparator
-                                .comparingInt(Card::getPriority)
-                                .thenComparing(c -> state.lastDisplayedAt(c.getId())))
+                                .comparing((Card c) -> state.lastDisplayedAt(c.getId()))
+                                .thenComparingInt(Card::getPriority))
                         .findFirst()
                         .orElseThrow());
     }
